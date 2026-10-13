@@ -2,6 +2,8 @@
 
 A permanent record of the repository's human-curated top papers, releases, blogs, and research news. Each edition is a dated snapshot of the weekly selection at that refresh. Citation rankings refresh separately in the live README.
 
+- [2026-10-13](2026-10-13.md)
+- [2026-10-11](2026-10-11.md)
 - [2026-10-07](2026-10-07.md)
 - [2026-10-02](2026-10-02.md)
 - [2026-09-27](2026-09-27.md)
