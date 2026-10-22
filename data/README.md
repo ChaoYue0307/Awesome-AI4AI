@@ -20,11 +20,21 @@ This directory contains the structured sources used to generate the public repos
 - Citation counts are discovery signals, not scientific-quality scores. When
   scholarly indexes split preprint and published versions, the catalog keeps
   the largest title-verified count from its configured sources.
+- An optional `first_public_date` stores the primary-source v1 submission date
+  as `YYYY-MM-DD`; `date` stores its month for display and ranking. An arXiv ID
+  can use the following announcement month, so do not infer first appearance
+  from the ID when a verified submission date is available. Live verification
+  checks this field against the arXiv Atom feed's `published` date.
 - An optional `semantic_scholar_id` stores a title-verified 40-character paper
   ID when Semantic Scholar cannot resolve the paper's proceedings URL. The
   refresh uses this ID directly and still checks the returned title.
 - GitHub code links are repository-root URLs; their star counts refresh with
   citations when maintainers run `python scripts/verify_papers.py --update`.
+- Optional `research_refresh` and `metrics_refresh` entries in `catalog_meta.json`
+  describe the latest literature pass and metric coverage. A checked date is
+  distinct from `citations_as_of`: unresolved previously cited records retain
+  their older values, and source-only records without an index match remain
+  unknown. Preserve these coverage distinctions when regenerating the README.
 - G/R/H/T are independent evidence coordinates, not a summed leaderboard.
 - Stage-ownership counts describe the coded sample, not prevalence in the full field.
 - `nr` means not reported or not tested; it does **not** mean demonstrated failure.

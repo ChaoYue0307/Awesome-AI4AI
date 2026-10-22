@@ -1,87 +1,87 @@
 {
-  "updated": "2026-10-17",
+  "updated": "2026-10-22",
   "cadence": "Weekly news picks, refreshed every Monday alongside citation rankings.",
   "selection": "The top stories from the trailing 30 days, scored on publisher authority, discussion volume, whether a concrete verifiable result is reported, whether it changes what agent builders do now, whether an artifact was released, and expected durability. Only primary sources are cited, and performance claims remain attributed to their publishers.",
   "items": [
+    {
+      "date": "2026-10-21",
+      "kind": "Open-weight release",
+      "source": "Recursive",
+      "title": "Introducing Flint",
+      "url": "https://recursive.com/updates/introducing-recursive-flint",
+      "why": "Recursive releases Apache-2.0 Flint, a 40B-total / 2.5B-active MoE for local agentic coding. The team says its Eureka Machine helped build the data, training, quantization and inference stack; open weights and day-zero vLLM support make this an inspectable AI-built-AI release."
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "Research release",
+      "source": "Anthropic",
+      "title": "Introducing Claude Duet",
+      "url": "https://claude.com/resources/articles/claude-duet",
+      "why": "Anthropic opens a waitlisted US research preview of Claude Duet for Pro and Max subscribers. Built around Opus 5.5, the proactive agent carries account memory and skills into a persistent workflow, works in a cloud VM with a browser, and checks before consequential actions."
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "Paper",
+      "source": "Saaket Agashe et al. · arXiv",
+      "title": "Evolving Agent Interfaces",
+      "url": "https://arxiv.org/abs/2610.28601",
+      "why": "The authors introduce Agent S4, which evolves computer-use interfaces and usage knowledge from trajectories, then selects repositories using held-out validation tasks. They report a 21.3% OSWorld V2 binary score with Qwen3.8-27B and a ScienceBoard increase from 41.4% to 58.6%; code is public."
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "Paper",
+      "source": "Yu Cui et al. · arXiv",
+      "title": "MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses",
+      "url": "https://arxiv.org/abs/2610.28201",
+      "why": "The authors introduce MaD-RSI, optimizing a shared agent harness with failure trajectories from heterogeneous models. Model differences become evidence during optimization rather than only a later transfer test; they report improved cross-model generalization and reduced training cost."
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "Paper",
+      "source": "Ruhan Wang et al. · arXiv",
+      "title": "Harness Self-Evolution for Long-Horizon Terminal Agents",
+      "url": "https://arxiv.org/abs/2610.27435",
+      "why": "The authors introduce RiseHarness for frozen-model terminal agents, using repeated successful and failed runs together with internal execution traces. Behavioral checks and repeated task evaluation gate proposed harness edits, targeting execution reliability and transfer rather than a single successful rollout."
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "Model release",
+      "source": "MiniMax",
+      "title": "MiniMax M3.1 Flash: Redefining Agent Performance and Cost",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "why": "MiniMax releases M3.1 Flash through its API and coding products, reporting 73.7% on DeepSWE v1.1 and 70% lower agentic usage cost than its predecessor. The announcement targets coding, computer use and professional workflows; weights are promised later rather than released at launch."
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "Paper",
+      "source": "Yue Huang et al. · arXiv",
+      "title": "Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research",
+      "url": "https://arxiv.org/abs/2610.24944",
+      "why": "The authors introduce Epi, combining persistent research history, hierarchical memory, branching and independent review across sessions under fixed verification. They report 120 record-setting mathematical results; on 30 FrontierOR tasks, Epi-turbo scores 5.4% above Codex at 64% of its model cost with the same backbone and effort."
+    },
     {
       "date": "2026-10-16",
       "kind": "Open-weight release",
       "source": "Reflection",
       "title": "Beam is now available",
       "url": "https://reflection.ai/blog/beam-is-available",
-      "why": "Reflection releases Beam, a 501B-total / 23B-active MoE for coding, reasoning and long-horizon agents, under Apache 2.0. The release includes multiple weight precisions, a speculative drafter, Mirror CLI and inference integrations, making the October 5 announcement a downloadable and customizable agent stack."
-    },
-    {
-      "date": "2026-10-15",
-      "kind": "Open-weight release",
-      "source": "Meta",
-      "title": "Introducing Muse Spark Open",
-      "url": "https://research.meta.ai/blog/muse-spark-open",
-      "why": "Meta releases an 816B-total / 42B-active native multimodal model with a 1M-token context window for coding and long-horizon agent work. Weights and multiple inference integrations are available; the Muse Model License has limited commercial terms, rather than an unrestricted permissive license."
-    },
-    {
-      "date": "2026-10-15",
-      "kind": "Paper",
-      "source": "Wei Dai et al. · arXiv",
-      "title": "Recursive Reward Improvement via Adversarial Meta-Prompt Evolution",
-      "url": "https://arxiv.org/abs/2610.21040",
-      "why": "The authors use reward-hacking adversaries to repair generated rubrics before solver training and improve future task generation. On HealthBench Professional, RRI raises adjusted scores over the Generation Only baseline by 10.9 points at 9B and 12.4 at 27B; the 27B model also transfers to two unseen professional benchmarks."
-    },
-    {
-      "date": "2026-10-14",
-      "kind": "Paper",
-      "source": "Yuyao Ge et al. · arXiv",
-      "title": "Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents",
-      "url": "https://arxiv.org/abs/2610.20344",
-      "why": "The authors benchmark harness construction from interface skeletons and development documents, then freeze each harness and test it in isolated containers using a scripted mock model. Across 19 models, three builds each and 328 test cases, the best pass rate is 53.05%, exposing substantial harness-engineering failures."
-    },
-    {
-      "date": "2026-10-14",
-      "kind": "Paper",
-      "source": "Yun-Shiuan Chuang et al. · arXiv",
-      "title": "A Self-Improving Agent that Grows its Own DSL: Oracle-Free Operator Induction for Exact Question Answering",
-      "url": "https://arxiv.org/abs/2610.20809",
-      "why": "The authors grow an exact domain-specific language with a frozen model, admitting operators only when independent implementations agree and conservation laws hold. In the evaluated bounded domains, the gate rejects all 138 buggy operator variants and transfers to business-ledger and clinical-encounter schemas without a reward model or answer key."
-    },
-    {
-      "date": "2026-10-13",
-      "kind": "Paper",
-      "source": "Tianyi Xu et al. · arXiv",
-      "title": "Verifier-Harness Co-Evolution for Training-Free Self-Improvement on Open-Ended Tasks",
-      "url": "https://arxiv.org/abs/2610.17609",
-      "why": "The authors evolve an executable verifier together with persistent harness state while keeping model parameters fixed. UCoE selects verifiers using controlled response contrasts; on six open-ended benchmarks it achieves 59.00% and 57.19% preference against matched direct generation with two Qwen backbones, with code linked by the paper."
+      "why": "Reflection releases Beam under Apache 2.0 with 501B total and 23B active parameters, multiple weight precisions, a speculative drafter, and the Mirror CLI harness. The release makes its coding and long-horizon agent stack available for deployment and customization."
     },
     {
       "date": "2026-10-12",
+      "kind": "Model release",
+      "source": "Meta",
+      "title": "Muse Wonder: A Frontier Model For Personal & Professional AI Agents",
+      "url": "https://research.meta.ai/blog/muse-wonder",
+      "why": "Meta introduces Muse Wonder and Muse Wonder Full for personal and professional agents, emphasizing Active Memory, sustained execution, and coding. Wonder is available through its API and Muse Code, while Full is available to Muse Code subscribers; the announcement does not release open weights."
+    },
+    {
+      "date": "2026-10-09",
       "kind": "Paper",
-      "source": "Xin Xu et al. · arXiv",
-      "title": "Drafting Agents, Not Just Tokens: Speculative Recursive Self-Improvement for Agentic Systems",
-      "url": "https://arxiv.org/abs/2610.16491",
-      "why": "The authors draft executable successor agents before predecessors finish evaluation but require complete verification before adoption. SpecRSI allocates search and checking budgets jointly; it reports coding-validation success of 69.4% versus HGM's 64.3% at a 20.8% lower target-cost index, with code linked by the paper."
-    },
-    {
-      "date": "2026-09-30",
-      "kind": "Model release",
-      "source": "Google DeepMind",
-      "title": "Gemini 4 Argon: our next era of frontier intelligence",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-      "why": "Google announces a frontier model for long-horizon software engineering and professional workflows, reporting 77.9% on DeepSWE v1.1 and expanding its output limit from 64K to 1M tokens. The original announcement limits initial access to trusted cyber defenders and describes a phased broader rollout."
-    },
-    {
-      "date": "2026-09-22",
-      "kind": "Model release",
-      "source": "Anthropic",
-      "title": "Introducing Claude Opus 5.5",
-      "url": "https://www.anthropic.com/claude-opus-5-5",
-      "why": "Anthropic releases its flagship Claude Opus 5.5 and reports 66.4% on Terminal-Bench 4.0 at xhigh effort, alongside an estimated 40% lower typical task cost than Opus 5. Its disclosed benchmark setup enables production safeguards and uses fallback models on some intercepted tasks."
-    },
-    {
-      "date": "2026-09-21",
-      "kind": "Model release",
-      "source": "xAI",
-      "title": "Introducing Grok 4.7",
-      "url": "https://x.ai/news/grok-4-7",
-      "why": "xAI introduces a larger base model with longer reinforcement learning on multi-hour tasks and native Grok Bot harness training. It reports 37.6% on Terminal-Bench 4.0 versus Grok 4.6's 20.3%, with availability through its API and coding tools."
+      "source": "Google Research",
+      "title": "Harness²: Recursive Agent Harnessing for an Open World",
+      "url": "https://arxiv.org/abs/2610.14224",
+      "why": "Google Research introduces two connected loops that refine the current task harness and retain evidence-supported lessons for future tasks, with model weights fixed. The authors report gains across three professional benchmarks; the Apache-2.0 implementation supports OpenCode and Codex, parallel and sequential recursion, and reproducible benchmark runs. [Official code](https://github.com/google-research/harness2)."
     }
   ]
 }

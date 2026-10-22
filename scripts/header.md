@@ -17,6 +17,8 @@
   Top AI-for-AI papers, releases, and blogs — curated every week. <strong>Stay tuned 🔥</strong>
 </p>
 
+<!--CATALOGSTATUS-->
+
 <p>
   <a href="assets/AI4AI-Survey.pdf"><img src="https://img.shields.io/badge/-Paper_(nice_layout)-B31B1B.svg?style=flat-square" alt="Paper, nice layout"></a>
   <a href="https://www.preprints.org/manuscript/202608.2108/v1"><img src="https://img.shields.io/badge/-Paper_on_Preprints.org-8B5CF6.svg?style=flat-square" alt="Paper on Preprints.org"></a>
@@ -40,7 +42,7 @@
 </td>
 <td width="33%" align="center">
   <strong>🗞️ Weekly update</strong><br>
-  <sub>Top papers and releases, selected every week and verified against primary sources.</sub>
+  <sub>New papers added to the catalog, plus source-verified papers and releases selected every week.</sub>
 </td>
 <td width="33%" align="center">
   <strong>🧭 Survey-grounded map</strong><br>
@@ -55,9 +57,10 @@
 
 ## What's New
 
+<!--RESEARCHUPDATE-->
 - 📄 **2026-08-30 — [Companion survey now online.](https://www.preprints.org/manuscript/202608.2108/v1)** Read *AI4AI Survey: From Long-Horizon Agents to Recursive Self-Improvement—Definitions, Reliable Horizons, and Open Problems*.
 - 🔄 **Maintainer refresh.** Citations, GitHub stars, and recent-paper/yearly rankings are rebuilt from the catalog.
-- 🚀 **<!--LASTUPDATED--> — Latest weekly edition published.** The living catalog and source-verified news digest are up to date.
+- 🚀 **<!--LASTUPDATED--> — Latest weekly edition published.** Read the source-verified news digest below.
 
 <details open markdown="1">
 <summary><b>🗂️ Explore the full collection</b></summary>

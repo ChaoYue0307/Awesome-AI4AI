@@ -14,11 +14,46 @@
   },
   "overlap_policy": "A paper may appear in multiple public collections but only once within each collection.",
   "citations_as_of": "2026-10-17",
-  "github_stars_as_of": "2026-10-17",
+  "github_stars_as_of": "2026-10-22",
   "citation_sources": [
     "Semantic Scholar",
     "OpenAlex"
   ],
   "citation_policy": "For papers indexed as multiple versions, retain the largest title-verified count reported by the configured sources.",
-  "year_grouping": "All yearly rankings use first public appearance year; a later venue year never moves a paper into a newer cohort."
+  "year_grouping": "All yearly rankings use first public appearance year; a later venue year never moves a paper into a newer cohort.",
+  "research_refresh": {
+    "date": "2026-10-22",
+    "added_papers": 15,
+    "promoted_papers": 1,
+    "coverage_start": "2026-09-14",
+    "coverage_end": "2026-10-22",
+    "note": "Overlapped the trailing 30 days, checked the latest Oct 18–21 releases, and filled older omissions across all three collections. Added 15 paper records and promoted the existing AIDE2 source-only record using its formal arXiv paper. Reconciled 17 primary paper sources: 15 added, 1 promoted, 1 out of scope. This extends the Oct 21 backlog reconciliation (53 additions)."
+  },
+  "metrics_refresh": {
+    "checked_on": "2026-10-22",
+    "citation_records_checked": 312,
+    "citation_records_verified": 297,
+    "citation_records_retained": [
+      "bfcl2025",
+      "deepswe2026",
+      "jimenez2024swe",
+      "li2023behavior",
+      "toolllm2023",
+      "wang2025hell",
+      "yao2023react",
+      "zhou2024webarena"
+    ],
+    "citation_records_unindexed": [
+      "agashe2026agents4",
+      "cui2026madrsi",
+      "frontierswe2026",
+      "li2026harness",
+      "openai2024introducing",
+      "rezaei2026compass",
+      "wang2026riseharness"
+    ],
+    "github_repositories_verified": 179,
+    "github_records_verified": 184,
+    "note": "OpenAlex counts were title-checked; transient failures were retried using current and previously verified lookup endpoints. Unresolved known counts retain their previous values; newly unindexed papers and source-only records retain unknown counts. Semantic Scholar returned HTTP 429. All configured GitHub repositories, including the newly discovered official Harness2 link, were queried using the authenticated REST API."
+  }
 }

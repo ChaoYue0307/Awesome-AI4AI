@@ -173,7 +173,10 @@ def in_collection(collection):
         paper for paper in PAPERS.values()
         if collection in paper.get("collections", [])
     ]
-    return sorted(papers, key=sort_date, reverse=True)
+    return sorted(
+        papers, key=lambda paper: paper.get("first_public_date") or sort_date(paper),
+        reverse=True,
+    )
 
 
 def months_since(value, today):
@@ -253,6 +256,24 @@ parts += [
     "### Top Ranking Papers by Average Monthly Citations",
     "",
 ]
+
+metrics_refresh = CATALOG_META.get("metrics_refresh")
+if metrics_refresh:
+    # Insert coverage before the ranking heading so partial updates are visible
+    # without presenting retained historical counts as newly verified values.
+    retained_count = len(metrics_refresh["citation_records_retained"])
+    unknown_count = len(metrics_refresh["citation_records_unindexed"])
+    note = (
+        f'> **Latest metric check: {metrics_refresh["checked_on"]}.** '
+        f'Title-verified citations for {metrics_refresh["citation_records_verified"]}/'
+        f'{metrics_refresh["citation_records_checked"]} catalog records; '
+        f'{retained_count} previously cited records retain older counts and '
+        f'{unknown_count} records remain without a verified index count. '
+        f'GitHub stars refreshed for {metrics_refresh["github_records_verified"]} records '
+        f'across {metrics_refresh["github_repositories_verified"]} repositories. '
+        'The complete citation as-of date above advances only after unresolved counts are verified.'
+    )
+    parts[-3:-3] = ["", note]
 
 rising = rising_stars()
 if rising:
@@ -334,6 +355,32 @@ toc = [
 
 readme = readme.replace("<!--TOC-->", "\n".join(toc))
 readme = readme.replace("<!--LASTUPDATED-->", WEEKLY["updated"])
+public_count = sum(bool(paper.get("collections")) for paper in PAPERS.values())
+collection_counts = {
+    collection: sum(collection in paper.get("collections", []) for paper in PAPERS.values())
+    for collection in ("benchmarks", "harness-design", "model-design")
+}
+catalog_status = (
+    f'<p><strong>Living catalog: {public_count} papers</strong> · '
+    f'{collection_counts["benchmarks"]} benchmarks · '
+    f'{collection_counts["harness-design"]} harness studies · '
+    f'{collection_counts["model-design"]} model studies<br>'
+    '<sub>Collections overlap. The original survey covers 223 papers.</sub></p>'
+)
+readme = readme.replace("<!--CATALOGSTATUS-->", catalog_status)
+research = CATALOG_META.get("research_refresh")
+research_update = ""
+if research:
+    additions = f'{research["added_papers"]} papers added'
+    promoted = research.get("promoted_papers", 0)
+    if promoted:
+        additions += f'; {promoted} existing source-only record promoted to the public catalog'
+    research_update = (
+        f'- 📚 **{research["date"]} — {additions}.** '
+        'Expanded Benchmarks, Harness Design, and Model Design with verified new and '
+        'previously missed papers; rebuilt the full catalog and both ranking families.'
+    )
+readme = readme.replace("<!--RESEARCHUPDATE-->", research_update)
 
 (ROOT / "README.md").write_text(readme)
 print(

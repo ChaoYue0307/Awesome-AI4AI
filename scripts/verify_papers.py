@@ -85,6 +85,7 @@ def arxiv_batch(ids):
     fails outright, so an unreachable API is never reported as missing ids."""
     out = {}
     arxiv_batch.incomplete = False
+    arxiv_batch.first_dates = {}
     ns = {"a": "http://www.w3.org/2005/Atom"}
     for i in range(0, len(ids), 60):
         url = ("https://export.arxiv.org/api/query?id_list="
@@ -105,6 +106,9 @@ def arxiv_batch(ids):
             if m:
                 out[m.group(1)] = re.sub(
                     r"\s+", " ", e.find("a:title", ns).text or "").strip()
+                published = e.findtext("a:published", default="", namespaces=ns)
+                if published:
+                    arxiv_batch.first_dates[m.group(1)] = published[:10]
         time.sleep(3)
     return out
 
@@ -263,8 +267,24 @@ def validate_catalog(papers):
             failures.append((key, "github_stars must be a non-negative integer"))
         if stars is not None and not github_slug(code):
             failures.append((key, "github_stars present without a GitHub repo URL"))
-        if paper.get("arxiv_id"):
-            expected_date = "20" + paper["arxiv_id"][:2] + "-" + paper["arxiv_id"][2:4]
+        first_public_date = paper.get("first_public_date")
+        if first_public_date is not None:
+            try:
+                if not isinstance(first_public_date, str):
+                    raise ValueError("not a string")
+                parsed_date = date.fromisoformat(first_public_date)
+                if parsed_date.isoformat() != first_public_date:
+                    raise ValueError("not ISO YYYY-MM-DD")
+            except ValueError:
+                failures.append((key, "first_public_date must be an ISO YYYY-MM-DD date"))
+                first_public_date = None
+        if paper.get("arxiv_id") or first_public_date:
+            # The arXiv identifier follows the announcement cycle. A v1
+            # submitted on the last day of a month can receive next month's ID.
+            expected_date = (
+                first_public_date[:7] if first_public_date
+                else "20" + paper["arxiv_id"][:2] + "-" + paper["arxiv_id"][2:4]
+            )
             if paper["date"] != expected_date:
                 failures.append((
                     key,
@@ -306,6 +326,9 @@ def main():
                 failures.append((k, "arXiv id not found: " + p["arxiv_id"]))
         elif sim(p["title"], t) < 0.75:
             failures.append((k, f"arXiv title mismatch: '{t}'"))
+        published = arxiv_batch.first_dates.get(p["arxiv_id"])
+        if p.get("first_public_date") and published and p["first_public_date"] != published:
+            failures.append((k, f"first_public_date disagrees with arXiv v1: {published}"))
     if arxiv_batch.incomplete:
         print("warning: the arXiv API was unreachable for at least one batch; "
               "id verification was skipped for unresolved entries", file=sys.stderr)

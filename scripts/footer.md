@@ -8,7 +8,7 @@
 2. **Verify:** exact title and identifier checks against primary scholarly sources.
 3. **Classify:** Benchmarks, Harness Design, and Model Design, allowing justified overlap.
 4. **Audit when evidence permits:** stage ownership plus independent G/R/H/T coordinates.
-5. **Refresh weekly:** maintainers update citation counts and rankings alongside weekly picks of papers, releases, blogs, and research news.
+5. **Refresh weekly:** discover and deduplicate new papers, add them to the relevant collections, refresh citations and GitHub stars, and rebuild all collection lists and rankings alongside the selected research news. The growing catalog extends the original survey; its historical paper counts and fixed evidence-audit sample remain separately identified.
 
 ## 📄 Citation
 

@@ -81,6 +81,8 @@ failures = []
 
 
 def paper_sort_date(paper):
+    if paper.get("first_public_date"):
+        return paper["first_public_date"]
     value = str(paper["date"])
     if re.fullmatch(r"\d{4}-\d{2}", value):
         return value
