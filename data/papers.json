@@ -7626,5 +7626,73 @@
    "model-design"
   ],
   "first_public_date": "2026-10-05"
+ },
+ "hao2026metateam": {
+  "title": "Evolve as a Team: Collaborative Self-Evolution for LLM-based Multi-Agent Systems",
+  "venue": "arXiv",
+  "date": "2026-05",
+  "arxiv_id": "2605.29790",
+  "url": "https://arxiv.org/abs/2605.29790",
+  "citations": 0,
+  "code": "https://github.com/zz-haooo/Meta-Team",
+  "sections": [
+   "targets/harness"
+  ],
+  "collections": [
+   "harness-design"
+  ],
+  "github_stars": 63,
+  "first_public_date": "2026-05-28"
+ },
+ "hao2026recreate": {
+  "title": "ReCreate: Reasoning and Creating Domain Agents Driven by Experience",
+  "venue": "ACL 2026",
+  "date": "2026-01",
+  "arxiv_id": "2601.11100",
+  "url": "https://aclanthology.org/2026.acl-long.1432/",
+  "citations": 0,
+  "code": "https://github.com/zz-haooo/ReCreate",
+  "sections": [
+   "targets/harness"
+  ],
+  "collections": [
+   "harness-design"
+  ],
+  "github_stars": 169,
+  "first_public_date": "2026-01-16"
+ },
+ "sun2026agon": {
+  "title": "Agon: An Autonomous Large-Scale Omnidisciplinary Research System Built on Prompt Economy",
+  "venue": "arXiv",
+  "date": "2026-06",
+  "arxiv_id": "2606.24177",
+  "url": "https://arxiv.org/abs/2606.24177",
+  "citations": 0,
+  "code": "https://github.com/AutoResearch-Factory/Agon",
+  "sections": [
+   "targets/harness"
+  ],
+  "collections": [
+   "harness-design"
+  ],
+  "github_stars": 54,
+  "first_public_date": "2026-06-23"
+ },
+ "sun2026perspectivegap": {
+  "title": "PerspectiveGap: A Benchmark for Multi-Agent Orchestration Prompting",
+  "venue": "arXiv",
+  "date": "2026-06",
+  "arxiv_id": "2606.08878",
+  "url": "https://arxiv.org/abs/2606.08878",
+  "citations": 0,
+  "code": "https://github.com/WhymustIhaveaname/PerspectiveGap",
+  "sections": [
+   "evidence/benchmarks"
+  ],
+  "collections": [
+   "benchmarks"
+  ],
+  "github_stars": 3,
+  "first_public_date": "2026-06-07"
  }
 }

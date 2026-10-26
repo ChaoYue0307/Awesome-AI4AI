@@ -31,8 +31,8 @@
   },
   "metrics_refresh": {
     "checked_on": "2026-10-26",
-    "citation_records_checked": 448,
-    "citation_records_verified": 436,
+    "citation_records_checked": 452,
+    "citation_records_verified": 440,
     "citation_records_retained": [
       "bfcl2025",
       "deepswe2026",
@@ -49,8 +49,8 @@
       "li2026harness",
       "openai2024introducing"
     ],
-    "github_repositories_verified": 207,
-    "github_records_verified": 212,
-    "note": "OpenAlex counts are title-checked. Network failures were retried using previous verified endpoints and independent title search. Unresolved known counts retain older values; unknown citations stay null. Semantic Scholar returned HTTP 429. All active GitHub repositories were refreshed with the authenticated REST API. Two newly paper-reported repositories return authenticated HTTP 404 and have no active code link or fabricated star count."
+    "github_repositories_verified": 211,
+    "github_records_verified": 216,
+    "note": "OpenAlex counts are title-checked. Network failures were retried using previous verified endpoints and independent title search. Unresolved known counts retain older values; unknown citations stay null. Semantic Scholar returned HTTP 429. All active GitHub repositories were refreshed with the authenticated REST API. Two newly paper-reported repositories return authenticated HTTP 404 and have no active code link or fabricated star count. On Oct 26, the four additions from issues #3–#6 were also title-verified against OpenAlex and their official GitHub repositories; all four indexed citation counts are zero, and repository stars were checked on Oct 26."
   }
 }
